@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guia Rápido para Anotações de Veículos no CVAT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        header {
+            background: #50b3a2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer {
+            background: #50b3a2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .imagem-container {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .text-element {
+            margin-right: 20px;
+            width: 150px;
+            /* largura fixa para alinhar as imagens */
+        }
+
+        img {
+            flex: 0 0 auto;
+            width: 200px;
+            border: 2px solid lightgrey;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .image-grid img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .text-element-grid {
+            margin: 0 10px;
+            width: 100px;
+            /* Largura fixa para alinhar as imagens verticalmente */
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+        }
+
+        .inline-list li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .horizontal-images .image-container {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+
+        .como-finalizar {
+            width: 700px;
+        }
+
+        .color-red {
+            color: red;
+        }
+
+        .zoom {
+            width: 400px;
+            height: 200px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .even-row {
+            background-color: #f2f2f2;
+        }
+
+        .indent-5 {
+            margin-left: 2em;
+        }
+
+        .centralizar-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .linha {
+            display: flex;
+            align-items: center;
+        }
+
+        .centralizar-vertical img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Guia Rápido para Anotações de Veículos no CVAT</h1>
+    </header>
+
+    <section id="criacao-de-conta">
+        <h2>1) Criação de Conta</h2>
+        <p>Para começar, você precisará criar uma conta, caso ainda não possua uma criada.</p>
+        <div class="imagem-container">
+            <img src="images/create_login.png" alt="Criação de Conta" style="width: 500px;height: 416px;"><br>
+            <span>Se você já possui uma conta, pode simplesmente fazer o login.<br> Senão, clique em 'Create an
+                account'.</span>
+        </div>
+        <div class="imagem-container">
+            <img src="images/create_login_dados.png" alt="Criação de Conta" style="width: 500px;"><br>
+            Preencha todos os dados da tela e clique em Submit.
+        </div>
+    </section>
+    <section id="selecao-de-jobs">
+        <h2>2) Seleção de Jobs</h2>
+        <p>Primeiro, confirme se o JOB desejado está no estágio 'annotation' e se foi atribuído a você. Após confirmar,
+            clique nele para iniciar o trabalho.</p>
+        <img src="images/selecao_de_jobs.png" alt="Seleção de Jobs" style="width: 900px;">
+    </section>
+    <section id="visao-geral">
+        <h2>3) Visão Geral da Interface do CVAT</h2>
+        <p>Essa imagem mostra os principais paineis de acesso aos recurso do programa.</p>
+        <img src="images/visao-geral.png" alt="Seleção de Jobs" style="width: 900px;">
+
+        <ul>
+            <li>
+                <strong>Barra de Ferramentas:</strong> Este painel reúne as ferramentas essenciais que usaremos,
+                facilitando o acesso rápido para otimizar o fluxo de trabalho. <ul class="inline-list">
+                    <li>1. Cursor,</li>
+                    <li>2. Mover a imagem na tela,</li>
+                    <li>3. Undo / Redo,</li>
+                    <li>4. Restaura o Zoom para Exibir a Imagem Completa,</li>
+                    <li>5. Zoom e</li>
+                    <li>8. Retângulo,</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Gravar:</strong> salva o trabalho no servidor.
+            </li>
+            <li>
+                <strong>Barra de deslocamento:</strong> contém botões de navegação:
+                <ul class="inline-list">
+                    <li>1. Vai para o primeiro frame,</li>
+                    <li>2. Anda 10 frames para trás,</li>
+                    <li>3. Anda 1 frame para trás,</li>
+                    <li>4. Play,</li>
+                    <li>5. Anda 1 frame para frente,</li>
+                    <li>6. Anda 10 frames para frente,</li>
+                    <li>7. Vai para o último frame</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Produção:</strong> Resumo do JOB com todos os objetos anotados.
+            </li>
+            <li>
+                <strong>Barra de objetos:</strong> Mostra todos os objetos da imagem selecionada.
+            </li>
+        </ul>
+    </section>
+
+    <section id="ferramentas-de-anotacao">
+        <h2>4) Ferramenta de Anotação a ser utilizada (retângulo)</h2>
+        <p>Depois de escolher um JOB, você vai utilizar a barra de ferramentas lateral para escolher o Rótulo para
+            anotação do objeto desejado.</p>
+        <p>Nesse projeto trabalharemos apenas com retângulos. Escolha o Rótulo desejado.</p>
+        <img src="images/ferramentas_de_anotacao.png" alt="Ferramentas de Anotação" style="width: 900px;">
+        <section class="indent-5" id="tracking">
+            <h3>4.1) Rótulos do Projeto</h3>
+            <div class="grid-container">
+                <!-- Carro -->
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #24b353;"></span>
+                    <span class="text-element-grid">Carro</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/carro/1.png" alt="Carro">
+                        <img src="images_perplan/carro/2.png" alt="Carro">
+                        <img src="images_perplan/carro/3.png" alt="Carro">
+                        <img src="images_perplan/carro/4.png" alt="Carro">
+                        <img src="images_perplan/carro/5.png" alt="Carro">
+                    </div>
+                </div>
+                <!-- Caminhão -->
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #cc3366;"></span>
+                    <span class="text-element-grid">Caminhão</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/caminhao/1.png" alt="Caminhão">
+                        <img src="images_perplan/caminhao/2.png" alt="Caminhão">
+                        <img src="images_perplan/caminhao/3.png" alt="Caminhão">
+                        <img src="images_perplan/caminhao/4.png" alt="Caminhão">
+                        <img src="images_perplan/caminhao/5.png" alt="Caminhão">
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #b83df5;"></span>
+                    <span class="text-element-grid">Van</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/van/1.png" alt="Van">
+                        <img src="images_perplan/van/2.png" alt="Van">
+                        <img src="images_perplan/van/3.png" alt="Van">
+                        <img src="images_perplan/van/4.png" alt="Van">
+                        <img src="images_perplan/van/5.png" alt="Van">
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #b25050;"></span>
+                    <span class="text-element-grid">Onibus</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/onibus/1.png" alt="Ônibus">
+                        <img src="images_perplan/onibus/2.png" alt="Ônibus">
+                        <img src="images_perplan/onibus/3.png" alt="Ônibus">
+                        <img src="images_perplan/onibus/4.png" alt="Ônibus">
+                        <img src="images_perplan/onibus/5.png" alt="Ônibus">
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #f078f0;"></span>
+                    <span class="text-element-grid">Moto</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/moto/1.png" alt="Moto">
+                        <img src="images_perplan/moto/2.png" alt="Moto">
+                        <img src="images_perplan/moto/3.png" alt="Moto">
+                        <img src="images_perplan/moto/4.png" alt="Moto">
+                        <img src="images_perplan/moto/5.png" alt="Moto">
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #f078f0;"></span>
+                    <span class="text-element-grid">Bicicleta</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/bicicleta/1.png" alt="Bicicleta">
+                        <img src="images_perplan/bicicleta/2.png" alt="Bicicleta">
+                        <img src="images_perplan/bicicleta/3.png" alt="Bicicleta">
+                        <img src="images_perplan/bicicleta/4.png" alt="Bicicleta">
+                        <img src="images_perplan/bicicleta/5.png" alt="Bicicleta">
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #ffcc33;"></span>
+                    <span class="text-element-grid">Roda</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/roda/1.png" alt="Roda">
+                        <img src="images_perplan/roda/2.png" alt="Roda">
+                        <img src="images_perplan/roda/3.png" alt="Roda">
+                        <img src="images_perplan/roda/4.png" alt="Roda">
+                        <img src="images_perplan/roda/5.png" alt="Roda">
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #ddff33;"></span>
+                    <span class="text-element-grid">Pessoa</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/pessoa/1.png" alt="Pessoa">
+                        <img src="images_perplan/pessoa/2.png" alt="Pessoa">
+                        <img src="images_perplan/pessoa/3.png" alt="Pessoa">
+                        <img src="images_perplan/pessoa/4.png" alt="Pessoa">
+                        <img src="images_perplan/pessoa/5.png" alt="Pessoa">
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #20262e;"></span>
+                    <span class="text-element-grid">Carreta</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/carreta/1.png" alt="Carreta">
+                        <img src="images_perplan/carreta/2.png" alt="Carreta">
+                        <img src="images_perplan/carreta/3.png" alt="Carreta">
+                        <img src="images_perplan/carreta/4.png" alt="Carreta">
+                        <img src="images_perplan/carreta/5.png" alt="Carreta">
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <span class="color-box" style="background-color: #3d3df5;"></span>
+                    <span class="text-element-grid">Carretinha</span>
+                    <div class="image-grid">
+                        <img src="images_perplan/carretinha/1.png" alt="Carretinha">
+                        <img src="images_perplan/carretinha/2.png" alt="Carretinha">
+                        <img src="images_perplan/carretinha/3.png" alt="Carretinha">
+                        <img src="images_perplan/carretinha/4.png" alt="Carretinha">
+                        <img src="images_perplan/carretinha/5.png" alt="Carretinha">
+                    </div>
+                </div>
+            </div>
+
+            <section id="diferenca_caminhao_carreta"><br>
+                <h3> <span class="color-red">Observação Importante :</span> Diferença entre Caminhão e Carreta </h3>
+                <img src="images/diferenca_caminhao_carreta.png" alt="Diferença Caminhão x Carreta"
+                    style="width: 900px;">
+                <p> <b>Caminhão:</b> Veículo não articulado &nbsp;&nbsp; <b>Carreta:</b> Veículo articulado com cavalo
+                    mecânico.
+                </p>
+            </section>
+        </section>
+        <section class="indent-5" id="tracking">
+            <h3>4.2) Escolha da Ferramente de Anotação</h3>
+            <img src="images/tracking.png" alt="Tracking" style="width: 600px;">
+            <ol>
+                <li>Escolha a <strong>ferramenta de anotação Retângulo</strong>.</li>
+                <li>Escolha o <strong>rótulo</strong> adequado para a anotação (ex: Carro, Moto, Caminhão).</li>
+                <li>Selecione a opção <strong>By 2 Points</strong>.</li>
+                <li>Clique no botão <strong>Track</strong> para iniciar o rastreamento.</li>
+            </ol>
+        </section>
+        <section class="indent-5" id="usando_tracking">
+            <h3>4.3) Instruções para Realizar a Anotação</h3>
+            <p>Siga estas etapas para fazer uma anotação eficaz:</p>
+            <ol>
+                <li><strong>Desenhe os Retângulos:</strong> Clique no canto superior esquerdo do veículo e arraste até o
+                    canto inferior direito para formar um retângulo. Repita este passo para as rodas. (Veja a imagem da
+                    esquerda para referência).</li>
+                <li><strong>Avance os Frames:</strong> Mova 5 frames à frente. Note que os
+                    retângulos ficaram parados no lugar original.<br>
+                    Mova e ajuste os retângulos na nova posição do veículo e das rodas (imagem da direita).Dependendo do
+                    cenário, avançar mais do que isso pode não ser eficaz.</li>
+                <li><strong>Volte e Ajuste:</strong> Retorne aos 5 frames anteriores e ajuste os retângulos para que se
+                    alinhem com a nova posição do veículo e das rodas.</li>
+            </ol>
+
+
+            <div class="imagem-container">
+                <img src="images/tracking/inicio.png" alt="Criação de Conta"
+                    style="width: 500px; margin-right: 20px;"><br>
+                Imagem inicial do video
+            </div>
+            <div class="imagem-container">
+                <img src="images/tracking/fim.png" alt="Criação de Conta" style="width: 500px;"><br>
+                Imagem 5 frames a frente do video.
+            </div>
+            <p>Agora retorne uma a uma (use o botão "<" na barra de deslocamento) as imagens, ajustando os retângulos
+                    das rodas e do carro.</p>
+                    <p>O resultado final deve ser o mostrado abaixo:</p>
+                    <section id="tracking" class="horizontal-images">
+                        <div class="image-container">
+                            <img src="images/tracking/1.png" alt="tracking"><br>
+                            Segundo frame
+                        </div>
+                        <div class="image-container">
+                            <img src="images/tracking/2.png" alt="tracking"><br>
+                            Terceiro frame
+                        </div>
+                        <div class="image-container">
+                            <img src="images/tracking/3.png" alt="tracking"><br>
+                            Quarto frame
+                        </div>
+                        <div class="image-container">
+                            <img src="images/tracking/4.png" alt="tracking"><br>
+                            Quinto frame
+                        </div>
+
+                    </section>
+        </section>
+        <section class="indent-5" id="como-finalizar">
+            <h3>4.4) Como finalizar o tracking <span class="color-red">(IMPORTANTE)</span></h3>
+            <p>Quando o objeto sair pela metade da cena, acione o botão que o torna invisível. Atenção: Antes de
+                realizar essa ação, assegure-se de que o recurso de zoom esteja desativado para confirmar que o objeto
+                está realmente saindo da cena.</p>
+            <img class="como-finalizar" src="images/tracking/como-finalizar.png" alt="como-finalizar">
+            <p>Ao clicar no botão FINALIZAR, o Objeto 5, que está saindo da cena, deve ficar invisível mas os anteriores
+                premanecerão visíveis</p>
+            <h3><span class="color-red">Aviso Importante:</span> <b>Nunca utilize a tecla DEL para excluir um objeto,
+                    pois essa ação removerá o objeto de todos os quadros anteriores.</b></h3>
+        </section>
+
+    </section>
+
+    <section id="como-finalizar">
+        <h3>5) Como finalizar o JOB <span class="color-red">(IMPORTANTE)</span></h3>
+        <p>Para concluir o trabalho com sucesso, é essencial que você o <b>Salve e Finalize a sua tarefa no sistema</b>.
+        </p>
+        <section class="indent-5" id="salvar">
+            <h3>5.1) Como salvar o seu trabalho </h3>
+            <p>Certifique-se de salvar seu trabalho ao concluí-lo, clicando no ícone do disquete localizado no canto
+                superior esquerdo da tela. Recomendamos que você também salve progressivamente durante o desenvolvimento
+                do projeto.</p>
+            <img class="como-finalizar" src="images/save.png" alt="save">
+
+        </section>
+        <section class="indent-5" id="salvar">
+            <h3>5.1) Como finalizar o JOB</span></h3>
+            <p>Antes de finalizar o JOB, certifique-se de revisar todas as imagens associadas ao seu trabalho. Após a
+                verificação, acesse o menu localizado no canto superior esquerdo da tela e selecione a opção "Finish the
+                JOB".</p>
+            <img class="finalizar-job" src="images/finish.png" alt="como-finalizar">
+            <div class="centralizar-vertical">
+                <div class="linha">
+                    Após finalizar o seu JOB, fique atento à confirmação de recompensa. &nbsp;
+                    <img src="images/funds.png" alt="Funds Icon" />
+                </div><br>
+                <div>
+                    <b>Caso não a receba, isso sugere que há erros de anotação em seu trabalho. O JOB será retornado
+                        para
+                        você fazer as correções necessárias. <br>Continue ajustando e reenviando até que a tarefa seja
+                        aprovada
+                        pelos verificadores.</b>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <section id="dicas-rapidas">
+        <h2>6) Dicas Rápidas</h2>
+        <p>6.1) Para realizar anotações com maior precisão, utilize o recurso de zoom, que pode ser acessado através da
+            rodinha do mouse ou selecionando a opção "Select a Region of Interest" no menu à esquerda da tela.</p>
+        <div class="horizontal-images">
+            <div class="image-container">
+                <img class="zoom" src="images/tracking/sem-zoom.png" alt="tracking"><br>
+                Sem ZOOM
+            </div>
+            <div class="image-container">
+                <img class="zoom" src="images/tracking/com-zoom.png" alt="tracking"><br>
+                Com ZOOM
+            </div>
+        </div>
+        <p>6.2) Utilize as teclas de atalho para agilizar o trabalho</p>
+        <table border="1">
+            <tr class="even-row">
+                <th>Atalho</th>
+                <th>Função Principal</th>
+            </tr>
+            <tr>
+                <td>F1</td>
+                <td>Abrir/fechar a lista de atalhos disponíveis</td>
+            </tr>
+            <tr class="even-row">
+                <td>F2</td>
+                <td>Ir para a página de configurações ou voltar</td>
+            </tr>
+            <tr>
+                <td>N</td>
+                <td>Repetir o último procedimento de desenho com os mesmos parâmetros</td>
+            </tr>
+            <tr class="even-row">
+                <td>Ctrl+S</td>
+                <td>Salvar o trabalho</td>
+            </tr>
+            <tr>
+                <td>Ctrl+Z</td>
+                <td>Cancelar a última ação relacionada a objetos</td>
+            </tr>
+            <tr class="even-row">
+                <td>Ctrl+Shift+Z ou Ctrl+Y</td>
+                <td>Cancelar a ação desfazer</td>
+            </tr>
+            <tr>
+                <td>Botão do Meio do Mouse enquanto precionado</td>
+                <td>Mover o quadro da imagem (por exemplo, enquanto desenha)</td>
+            </tr>
+            <tr class="even-row">
+                <td>Clique Duplo no Mouse</td>
+                <td>Restaura o Zoom para Exibir a Imagem Completa</td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </table>
+    </section>
+
+    <section id="recompensa-e-regra">
+        <h2>7) Recompensa e Regra de Cálculo</h2>
+        <p>A recompensa para este trabalho será calculada com base nos seguintes critérios:</p>
+        <pre>
+            ('Total de Frames' * 0.0001 USDC) + ('Total de Retângulos ajustados manualmente' * 0.0025 USDC)
+        </pre>
+
+        <h3>Exemplo</h3>
+        <p>Suponhamos que o total de Frames seja 200 e o total de Retângulos ajustados manualmente seja 2000.</p>
+
+        <p>Aplicando a regra:</p>
+        <pre>
+            (200 * 0.0001 USDC) + (2000 * 0.0025 USDC)
+            0.02 USDC + 5 USDC
+            5.02 USDC
+        </pre>
+
+        <p>Portanto, você receberá <strong>5.02 USDC</strong>.</p>
+    </section>
+    <section class="footer" id="agradecomento">
+        <h4>
+            <p>Desejamos um bom trabalho e agradecemos pela sua disponibilidade em colaborar conosco. Seu esforço é
+                fundamental para o sucesso deste projeto.</p>
+        </h4>
+    </section>
+</body>
+
+</html>
