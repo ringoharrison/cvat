@@ -154,7 +154,7 @@
         #\:0\.targetLanguage {
             width: 180px;
         }
-        
+         /* Esconde o ícone do Google Translate */
          .goog-te-gadget-icon {
             display: none !important;
          }
@@ -179,7 +179,7 @@
 
     <header>
         <h1 style="margin: 0px;">Guia Rápido para Anotações de Veículos no CVAT</h1>
-        <div>
+        <div >
             <h3 style="margin: 0px;">Escolha o idioma:</h3>
             <div id="google_translate_element"></div>
         </div>
@@ -543,24 +543,22 @@
         </table>
     </section>
 
-    <section id="recompensa-e-regra">
+    <section  id="recompensa-e-regra">
         <h2>7) Recompensa e Regra de Cálculo</h2>
         <p>A recompensa para este trabalho será calculada com base nos seguintes critérios:</p>
         <pre>
-            ('Total de Frames' * 0.0001 USDC) + ('Total de Retângulos ajustados manualmente' * 0.0025 USDC)
+             ('Total de Retângulos ajustados manualmente' * 0.0025 USDC)
         </pre>
 
         <h3>Exemplo</h3>
-        <p>Suponhamos que o total de Frames seja 200 e o total de Retângulos ajustados manualmente seja 2000.</p>
+        <p>Suponhamos que o total de Retângulos ajustados manualmente seja 2000.</p>
 
         <p>Aplicando a regra:</p>
         <pre>
-            (200 * 0.0001 USDC) + (2000 * 0.0025 USDC)
-            0.02 USDC + 5 USDC
-            5.02 USDC
+            (2000 * 0.0025 USDC) = 5.00 USDC
         </pre>
 
-        <p>Portanto, você receberá <strong>5.02 USDC</strong>.</p>
+        <p>Portanto, você receberá <strong>5.00 USDC</strong>.</p>
     </section>
     <section class="footer" id="agradecomento">
         <h4>
